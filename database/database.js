@@ -1,4 +1,5 @@
-import { Client } from "../deps.js";
+import { Client } from "https://deno.land/x/postgres@v0.4.5/mod.ts";
+// import { Client } from "../deps.js";
 // import { Pool } from "../deps.js";
 import { config } from "../config/config.js";
 
@@ -20,8 +21,7 @@ import { config } from "../config/config.js";
 // }
 
 // db: use Client
-const DATABASE_URL = Deno.env.toObject().DATABASE_URL;
-const client = new Client(DATABASE_URL);
+const client = new Client(config.database);
 const executeQuery = async(query, ...args) => {
   try {
       await client.connect();
