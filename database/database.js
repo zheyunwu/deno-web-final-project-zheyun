@@ -20,7 +20,8 @@ import { config } from "../config/config.js";
 // }
 
 // db: use Client
-const client = new Client(config.database);
+const DATABASE_URL = Deno.env.toObject().DATABASE_URL;
+const client = new Client(DATABASE_URL);
 const executeQuery = async(query, ...args) => {
   try {
       await client.connect();
