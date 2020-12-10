@@ -1,8 +1,12 @@
-# Instruction
+# web-final-project-zheyun
 This is the final project of CS-C3170 - Web Software Development.
 Student: Zheyun Wu.
 
-# Database schema
+## Online Demo (Heroku)
+https://web-final-project-zheyun.herokuapp.com/
+
+## Run Locally
+### 1. Database schema
 ```sql
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -28,7 +32,9 @@ CREATE TABLE reports (
 );
 ```
 
-# Run this app locally:
+### 2. Edit db settings in "./config/config.js"
+
+### 3. Run the app:
 
 ```shell
 deno run --allow-read --allow-env --allow-net --unstable app.js
